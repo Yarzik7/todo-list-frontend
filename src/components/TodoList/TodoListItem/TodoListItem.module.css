@@ -1,0 +1,46 @@
+.todoListItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid var(--primary-text-color);
+  border-radius: var(--border-radius);
+}
+
+.todoListItemDescriptionBox {
+  display: flex;
+  align-items: center;
+}
+
+.todoListItemLabel {
+  display: inline-flex;
+  align-items: center;
+}
+
+.checkbox {
+  appearance: none;
+}
+
+.customCheckbox {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+
+  border: 1px solid var(--primary-text-color);
+  border-radius: 5px;
+}
+
+.todoListItemControlPanel {
+}
+
+.todoListItemControlPanelBtn {
+  color: inherit;
+
+  transition: transform var(--transition-duration) var(--timing-function);
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
