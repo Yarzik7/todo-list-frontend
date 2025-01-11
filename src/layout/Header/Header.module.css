@@ -1,0 +1,5 @@
+.header {
+  height: var(--layout-height);
+
+  background-color: var(--accent-color);
+}

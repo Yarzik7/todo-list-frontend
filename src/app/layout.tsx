@@ -1,5 +1,7 @@
+import "modern-normalize/modern-normalize.css";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Header from "@/layout/Header/Header";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -25,6 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <Header />
         <main>{children}</main>
       </body>
     </html>

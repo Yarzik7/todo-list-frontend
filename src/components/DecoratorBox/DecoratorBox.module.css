@@ -1,0 +1,4 @@
+.decoratorBox {
+  background-color: var(--accent-color);
+  border-radius: var(--border-radius);
+}
