@@ -1,0 +1,25 @@
+:root {
+  /* Colors */
+  --accent-color: #0818a9;
+  --secondary-accent-color: #0054ca;
+  --primary-black-color: #1c1c1c;
+  --primary-text-color: #fff;
+  --decorator-box-shadow: 0px 3px 10px -3px #1f309e75;
+  --bg-color: #eaeaea;
+  --bg-disabled-color: #808078;
+  --border-disabled-color: #c9c9c9;
+  --disabled-text-color: #4e4e4e;
+  --error-color: #ff0e0e;
+
+  /* Sizes */
+  --border-radius: 8px;
+  --layout-height: 50px;
+
+  /* Indents */
+  --padding-container: 15px;
+  --padding-button: 5px 5px;
+
+  /* Transitions and animations */
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-duration: 200ms;
+}
