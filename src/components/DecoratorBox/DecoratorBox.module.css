@@ -1,4 +1,9 @@
 .decoratorBox {
+  padding: var(--padding-container);
   background-color: var(--accent-color);
   border-radius: var(--border-radius);
+}
+
+.decoratorBox:not(:first-child) {
+  margin-top: 15px;
 }
