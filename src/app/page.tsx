@@ -73,8 +73,8 @@ export default function Home() {
 
         <DecoratorBox>
           <form onSubmit={handleCreateTask}>
-            <legend className="visually-hidden">Create task</legend>
             <fieldset disabled={isDisabled} className={css.fieldset}>
+              <legend className="visually-hidden">Create task</legend>
               <Input name="caption" label="Caption" placeholder="Learn English" value={caption} onChange={onChange} />
               {isCreating ? <Loader size={40} /> : <Button type="submit" caption="Create" />}
             </fieldset>
