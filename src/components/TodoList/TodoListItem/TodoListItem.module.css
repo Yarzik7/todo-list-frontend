@@ -45,7 +45,7 @@
 }
 
 .todoListItemControlPanelBtn {
-  color: inherit;
+  color: var(--primary-text-color);
 
   transition: transform var(--transition-duration) var(--timing-function);
 
