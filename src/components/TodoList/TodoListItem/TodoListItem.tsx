@@ -74,14 +74,18 @@ const TodoListItem = ({ id, caption, isCompleted, setTasks }: ITodoListItemProps
         </label>
       </div>
 
-      <button
-        type="button"
-        disabled={isDisabled}
-        onClick={handleDeleteTask}
-        className={css.todoListItemControlPanelBtn}
-      >
-        {isDeleting ? <Loader size={20} /> : <FaTrashAlt />}
-      </button>
+      {isDisabled ? (
+        <Loader size={20} />
+      ) : (
+        <button
+          type="button"
+          disabled={isDisabled}
+          onClick={handleDeleteTask}
+          className={css.todoListItemControlPanelBtn}
+        >
+          <FaTrashAlt />
+        </button>
+      )}
     </li>
   );
 };
