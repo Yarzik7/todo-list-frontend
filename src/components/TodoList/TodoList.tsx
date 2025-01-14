@@ -1,44 +1,35 @@
-'use client';
+import React, { Dispatch, SetStateAction } from 'react';
 
-import React from 'react';
-import { onGetTasks } from '@/utils/api/onGetTasks';
-import { useEffect, useState } from 'react';
 import TodoListItem from './TodoListItem/TodoListItem';
 import Loader from '../Loader/Loader';
+
 import type { ITask } from '@/types/Task.types';
-import type { IError } from '@/types/Error.types';
 import css from './TodoList.module.css';
 
-const TodoList = () => {
-  const [tasks, setTasks] = useState<ITask[]>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+interface ITodoListProps {
+  tasks: ITask[];
+  isLoading: boolean;
+  setTasks: Dispatch<SetStateAction<ITask[]>>;
+}
 
-  useEffect(() => {
-    const getTasks = async () => {
-      setIsLoading(true);
-      const tasksResponse: ITask[] | IError = await onGetTasks();
-      setIsLoading(false);
-
-      if ('error' in tasksResponse && tasksResponse.error) {
-        return alert(tasksResponse.message);
-      }
-
-      if (!('error' in tasksResponse)) {
-        setTasks(tasksResponse);
-      }
-    };
-
-    getTasks();
-  }, []);
-
+const TodoList = ({ tasks, isLoading, setTasks }: ITodoListProps) => {
   return (
     <>
+      {!isLoading && tasks.length < 1 && <p className={css.todoListMessage}>Todo list is empty.</p>}
       {isLoading && <Loader size={60} />}
-      <ul className={css.todoList}>
-        {tasks.map(task => (
-          <TodoListItem key={task.id} caption={task.caption} isCompleted={task.isCompleted} />
-        ))}
-      </ul>
+      {tasks.length > 0 && (
+        <ul className={css.todoList}>
+          {tasks.map(task => (
+            <TodoListItem
+              key={task.id}
+              id={task.id}
+              caption={task.caption}
+              isCompleted={task.isCompleted}
+              setTasks={setTasks}
+            />
+          ))}
+        </ul>
+      )}
     </>
   );
 };

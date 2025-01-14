@@ -14,8 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Todo List",
-  description: "Todo List",
+  title: 'Todo List',
+  description: 'Todo List',
+  icons: { icon: '/favicon.svg' },
 };
 
 export default function RootLayout({

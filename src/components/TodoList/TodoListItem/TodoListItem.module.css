@@ -4,6 +4,10 @@
   padding: 10px;
   border: 1px solid var(--primary-text-color);
   border-radius: var(--border-radius);
+
+  &:has(.checkbox:checked) {
+    background-color: var(--bg-disabled-color);
+  }
 }
 
 .todoListItemDescriptionBox {
@@ -14,10 +18,18 @@
 .todoListItemLabel {
   display: inline-flex;
   align-items: center;
+
+  &:has(.checkbox:checked) {
+    text-decoration: line-through;
+  }
 }
 
 .checkbox {
   appearance: none;
+
+  &:disabled + .customCheckbox {
+    background-color: var(--bg-disabled-color);
+  }
 }
 
 .customCheckbox {
@@ -32,9 +44,6 @@
   border-radius: 5px;
 }
 
-.todoListItemControlPanel {
-}
-
 .todoListItemControlPanelBtn {
   color: inherit;
 
@@ -42,5 +51,9 @@
 
   &:hover {
     transform: scale(1.2);
+  }
+
+  &:disabled {
+    color: var(--bg-disabled-color);
   }
 }

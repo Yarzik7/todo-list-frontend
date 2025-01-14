@@ -1,5 +1,5 @@
-import React from "react";
-import css from "./DecoratorBox.module.css";
+import React from 'react';
+import css from './DecoratorBox.module.css';
 
 interface IDecoratorBoxProps {
   children: React.ReactNode;
